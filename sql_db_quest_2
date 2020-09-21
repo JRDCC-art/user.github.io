@@ -1,0 +1,39 @@
+mysql>  INSERT INTO school (name, country, capacity)
+    -> VALUES ("Hogwarts School of Witchcraft and Wizardry", "United Kingdom", 400),
+    -> ("Beauxbatons Academy of Magic", "France", 550),
+    -> ("Castelobruxo", "Brazil", 380),
+    -> ("Durmstrang Institute", "Norway", 570);
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+mysql> INSERT INTO school (name, country, capacity)
+    -> VALUES ("Ilvermorny School of Witchcraft and Wizardry", "USA", 300),
+    -> ("Koldovstoretz", "Russia", 125),
+    -> ("Mahoutokoro School of Magic", "Japan", 800),
+    -> ("Uagadou School of Magic", "Uganda", 350);
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+mysql> UPDATE school
+    -> SET country="Sweden"
+    -> WHERE name = "Durmstrang Institute";
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> UPDATE school
+    -> SET capacity = 700
+    -> WHERE name = "Uagadou School of Magic";
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> DELETE FROM school
+    -> WHERE name LIKE "%Magic%";
+Query OK, 3 rows affected (0.02 sec)
+mysql> SELECT * FROM school;
++----+----------------------------------------------+----------+----------------+
+| id | name                                         | capacity | country        |
++----+----------------------------------------------+----------+----------------+
+|  1 | Hogwarts School of Witchcraft and Wizardry   |      400 | United Kingdom |
+|  3 | Castelobruxo                                 |      380 | Brazil         |
+|  4 | Durmstrang Institute                         |      570 | Sweden         |
+|  5 | Ilvermorny School of Witchcraft and Wizardry |      300 | USA            |
+|  6 | Koldovstoretz                                |      125 | Russia         |
++----+----------------------------------------------+----------+----------------+
+5 rows in set (0.01 sec)
+
