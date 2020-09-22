@@ -10,15 +10,13 @@ Brown	Lavender	beater	Gryffindor
 Creevey	Colin	seeker	Gryffindor
 Creevey	Dennis	keeper	Gryffindor
 Dumbledore	Aberforth	keeper	Gryffindor
-"""""""
-
++++++++++++++++++++++++++
 SELECT wizard.lastname, wizard.firstname FROM player
 JOIN wizard ON player.wizard_id = wizard.id
 JOIN team ON player.team_id = team.id
 WHERE player.role = "seeker"
 ORDER BY wizard.lastname
-
-""""""""
+++++++++++++++++++++++++++
 Binns	Cuthbert
 Corner	Michael
 Creevey	Colin
@@ -27,4 +25,19 @@ Gryffindor	Godric
 Hufflepuff	Helga
 Lestrange	Rabastan
 Malfoy	Narcissa
-""""""""""
+++++++++++++++++++++++++++
+SELECT firstname, lastname 
+FROM wizard 
+LEFT JOIN player ON 
+	wizard.id = player.wizard_id 
+WHERE player.id is null;
+++++++++++++++++++++++++++
+Terry	Boot
+Crabbe	
+Remus	Lupin
+Padma	Patil
+Parvati	Patil
+Demelza	Robins
+Horace	Slughorn
+Charles	Weasley
+Molly	Weasley
