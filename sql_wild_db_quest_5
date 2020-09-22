@@ -1,0 +1,30 @@
+SELECT wizard.lastname, wizard.firstname, player.role, team.name FROM player
+JOIN wizard ON player.wizard_id = wizard.id
+JOIN team ON player.team_id = team.id
+ORDER BY team.name
+""""""
+Bell	Katie	chaser	Gryffindor
+Binns	Cuthbert	seeker	Gryffindor
+Black	Sirius	beater	Gryffindor
+Brown	Lavender	beater	Gryffindor
+Creevey	Colin	seeker	Gryffindor
+Creevey	Dennis	keeper	Gryffindor
+Dumbledore	Aberforth	keeper	Gryffindor
+"""""""
+
+SELECT wizard.lastname, wizard.firstname FROM player
+JOIN wizard ON player.wizard_id = wizard.id
+JOIN team ON player.team_id = team.id
+WHERE player.role = "seeker"
+ORDER BY wizard.lastname
+
+""""""""
+Binns	Cuthbert
+Corner	Michael
+Creevey	Colin
+Goyle	Gregory
+Gryffindor	Godric
+Hufflepuff	Helga
+Lestrange	Rabastan
+Malfoy	Narcissa
+""""""""""
