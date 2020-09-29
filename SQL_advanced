@@ -1,0 +1,42 @@
+SELECT team.name, COUNT(wizard_id)
+FROM team
+JOIN player ON team.id = player.team_id
+GROUP BY team.name
+ORDER BY COUNT(wizard_id) DESC
+
+##############
+Gryffindor	36
+Slytherin	21
+Ravenclaw	15
+Hufflepuff	12
+#############
+
+SELECT team.name, COUNT(wizard_id)
+FROM team
+JOIN player ON team.id = player.team_id
+GROUP BY team.name
+HAVING COUNT(wizard_id) >= 14
+ORDER BY COUNT(wizard_id) DESC
+
+##############
+Gryffindor	36
+Slytherin	21
+Ravenclaw	15
+##############
+
+SELECT wizard.firstName, player.enrollment_date
+FROM wizard
+JOIN player ON wizard.id = player.wizard_id
+JOIN team ON player.team_id = team.id
+WHERE dayname(enrollment_date) = 'Monday' AND team.name = "Gryffindor"
+ORDER BY enrollment_date 
+
+###############
+George	1991-08-26
+Alice	1992-02-17
+Cadogan	1993-01-04
+Godric	1993-08-30
+Sirius	1994-01-10
+Aberforth	1995-04-24
+Augusta	1999-10-25
+###############
