@@ -1,0 +1,16 @@
+
+CHALLENGE REGEX 
+1:
+/Thomas A\. Anderson/
+
+2:
+/\d{2}\/\d{2}\/\d{4}/
+
+3:
+/\s\d\/\d{2}/
+
+4:
+/\w{14}/
+
+5:
+/https:\/\/www\.imdb\.com\/title\/\w*/
